@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #3399ff;
+    overflow: hidden;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7); /* Color negro con transparencia */
+    color: white;
+    padding: 1em;
+    text-align: right; /* Alinear la barra de navegación a la derecha */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+}
+
+nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background:blue;
+    transition: width 0.3s;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:last-child {
+    margin-right: 2em; /* Agregar margen derecho */
+}
+
+.header {
+    text-align: left;
+    padding: 6em 2em 2em; /* Añadido padding superior para evitar que el contenido quede oculto tras la barra de navegación */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Restaurar justificación original */
+}
+
+.header .text {
+    max-width: 60%;
+    position: relative;
+    z-index: 1;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: left; /* Mantener alineación del texto a la izquierda */
+}
+
+.header h1 {
+    font-size: 4em; /* Tamaño duplicado */
+    margin-bottom: 0.3em; /* Espacio debajo del h1 */
+}
+
+.header h2 {
+    font-size: 2em; /* Tamaño duplicado */
+    margin-bottom: 0.3em; /* Espacio debajo del h2 */
+}
+
+.header p {
+    font-size: 2em; /* Tamaño duplicado */
+    margin-top: 0.3em; /* Espacio encima del párrafo */
+    white-space: nowrap;
+    overflow: hidden;
+    width: auto; /* Ajustar el ancho automáticamente */
+}
+
+.header video {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 2em; /* Ajustar el margen izquierdo */
+    border-radius: 25% / 50%;
+    opacity: 0.8;
+    position: relative; /* Permitir el uso de propiedades de posición */
+    right: 150px; /* Mover el video hacia la derecha */
+    top: 50px; /* Mover el video hacia abajo */
+    transition: opacity 1s ease-in-out; /* Transición suave */
+}
+
+.header video:hover {
+    opacity: 1; /* Aumentar la opacidad al pasar el cursor */
+}
+
+.header button {
+    margin-top: 1em;
+    padding: 0.75em 1.5em;
+    font-size: 1.2em;
+    color: white;
+    background-color: #3399ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header button:hover {
+    background-color: #2673cc;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.glow-button {
+    font-size: 18px;
+    padding: 15px 30px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: #1f1f1f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.glow-button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ffcc00, #ff3300, #33cc33, #0099ff);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.glow-button:hover::before {
+    opacity: 1;
+}
+
+.glow-button:hover {
+    border-color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    animation: ripple 15s infinite;
+    box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small {
+    width: 200px;
+    height: 200px;
+    left: -100px;
+    bottom: -100px;
+}
+
+.medium {
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    bottom: -200px;
+}
+
+.large {
+    width: 600px;
+    height: 600px;
+    left: -300px;
+    bottom: -300px;
+}
+
+.xlarge {
+    width: 800px;
+    height: 800px;
+    left: -400px;
+    bottom: -400px;
+}
+
+.xxlarge {
+    width: 1000px;
+    height: 1000px;
+    left: -500px;
+    bottom: -500px;
+}
+
+.shade1 {
+    opacity: 0.2;
+}
+
+.shade2 {
+    opacity: 0.5;
+}
+
+.shade3 {
+    opacity: 0.7;
+}
+
+.shade4 {
+    opacity: 0.8;
+}
+
+.shade5 {
+    opacity: 0.9;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+
