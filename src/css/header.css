@@ -1,0 +1,57 @@
+/* barra de navegacion */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(7, 2, 32, 0.8); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.nav .logo .planet1{
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--color-primary-light), var(--color-secondary));
+    border: 3px solid var(--color-secondary-light);
+    border-radius: 50%;
+    box-shadow: inset -8px -8px 15px rgba(0, 0, 0, 0.6), 5px 5px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    font-size: px;
+    font-weight: bold;
+    z-index: 10;
+}
+.logo a {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary-light);
+}

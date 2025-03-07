@@ -1,0 +1,59 @@
+/* reset basico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variables globales */
+:root {
+    --color-primary: #6D4ECF;
+    --color-primary-light: #9E8FD4;
+    --color-secondary: #2C09EB;
+    --color-secondary-light: #5240D0;
+    --color-bg-dark: #070220;
+    --color-white: #ffffff;
+    --color-text: #cccccc; /* Ajusta según prefieras */
+    --font-family: 'Montserrat', sans-serif; /* Ejemplo */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* centrar el contenido y limitar el ancho maximo */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+/* responsividad */
+@media (max-width: 500px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-3d {
+        margin-top: 2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        margin-bottom: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+}
+
+

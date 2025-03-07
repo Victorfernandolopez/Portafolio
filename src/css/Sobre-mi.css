@@ -1,0 +1,35 @@
+/* titulo */
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+

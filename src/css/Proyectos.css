@@ -1,0 +1,61 @@
+/* centrado del titulo */
+.projects h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+/* cuadricula responsiva */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* tarjeta de proyecto */
+.project-card {
+    background-color: #1e1e2e;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* imagen dentor de tarjeta */
+.project-card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* texto tarjeta */
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-light);
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+}
+
+/* boton ver detalles */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* mover tarjeta */
+.project-card:hover {
+    transform: translateY(-5px);
+}
