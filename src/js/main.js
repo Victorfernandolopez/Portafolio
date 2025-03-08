@@ -1,41 +1,39 @@
-// main.js
+// Manejo del menú móvil
+document.addEventListener('DOMContentLoaded', function() {
+    // Manejo del menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-// Ejemplo básico de animación al hacer scroll (reveal effect)
-window.addEventListener('scroll', revealElements);
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuToggle.classList.toggle('active'); // Añadir clase active
+            navMenu.classList.toggle('active');
+        });
 
-function revealElements() {
-    const revealElements = document.querySelectorAll('.reveal');
+        // Cerrar menú al hacer click en un link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
 
-    for (let i = 0; i < revealElements.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = revealElements[i].getBoundingClientRect().top;
-        const revealPoint = 150; // Ajusta la distancia para el efecto
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', (e) => {
+            const isClickInside = navMenu.contains(e.target) || menuToggle.contains(e.target);
+            if (!isClickInside && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
 
-        if (elementTop < windowHeight - revealPoint) {
-            revealElements[i].classList.add('active');
-        } else {
-            revealElements[i].classList.remove('active');
-        }
+        // Cerrar menú al hacer scroll
+        window.addEventListener('scroll', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
     }
-}
-
-// Manejo del formulario de contacto (ejemplo simple)
-const contactForm = document.querySelector('.contact-form');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Capturar valores
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        const mensaje = document.getElementById('mensaje').value;
-
-        // Aquí podrías hacer una petición fetch/axios a tu backend
-        // o utilizar servicios de email como EmailJS.
-
-        alert('¡Mensaje enviado! Gracias por contactarme.');
-        contactForm.reset();
-    });
-}
-
+});

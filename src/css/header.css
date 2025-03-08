@@ -3,7 +3,8 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: rgba(7, 2, 32, 0.8); /* Fondo semi-transparente */
+    background-color: rgba(7, 2, 32, 0.8);
+    /* Fondo semi-transparente */
     backdrop-filter: blur(10px);
 }
 
@@ -14,7 +15,7 @@
     padding: 1rem 0;
 }
 
-.nav .logo .planet1{
+.nav .logo .planet1 {
     top: 50%;
     left: 50%;
     width: 40px;
@@ -32,6 +33,7 @@
     font-weight: bold;
     z-index: 10;
 }
+
 .logo a {
     color: var(--color-primary);
     font-weight: 700;
@@ -54,4 +56,71 @@
 
 .nav-link:hover {
     color: var(--color-primary-light);
+}
+
+/* Añadir menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    color: var(--color-primary-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000; /* Asegurar visibilidad */
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar solo en móviles */
+        position: relative;
+        right: 0;
+        margin: 0 1rem;
+    }
+    .nav-menu {
+        display: none; /* Estado normal */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-bg-dark);
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 9999;
+    }
+    .nav-menu.active {
+        display: flex; /* Estado cuando está abierto */
+        flex-direction: column;
+        gap: 1rem;
+        /* Nuevos estilos de alineación */
+        align-items: flex-start;
+        text-align: left;
+    }
+    .nav-link {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        text-align: left;
+        border-left: 3px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+    .nav-link:hover {
+        border-left-color: var(--color-primary);
+    }
+}
+@media (max-width: 768px) {
+    .nav-menu.active {
+        align-items: flex-end; /* Cambiado de flex-start a flex-end */
+        padding-right: 2rem;
+    }
+    
+    .nav-link {
+        text-align: right; /* Alineación derecha del texto */
+        padding: 0.8rem 2rem 0.8rem 1rem; /* Mayor padding derecho */
+        border-right: 3px solid transparent; /* Borde derecho en lugar de izquierdo */
+        border-left: none;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        border-right-color: var(--color-primary);
+        transform: translateX(-10px);
+    }
 }

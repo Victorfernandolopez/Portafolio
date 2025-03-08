@@ -59,3 +59,13 @@
 .project-card:hover {
     transform: translateY(-5px);
 }
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        margin: 0 0 1.5rem 0;
+    }
+}
