@@ -37,3 +37,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+/* caroucel proyectos */
+let currentGroup = 0;
+
+function showGroup(index) {
+    const groups = document.querySelectorAll('.project-group');
+    const totalGroups = groups.length;
+
+    if (index >= totalGroups) {
+        currentGroup = 0;
+    } else if (index < 0) {
+        currentGroup = totalGroups - 1;
+    } else {
+        currentGroup = index;
+    }
+
+    const offset = -currentGroup * 100;
+    document.querySelector('.projects-grid').style.transform = `translateX(${offset}%)`;
+}
+
+function nextGroup() {
+    showGroup(currentGroup + 1);
+}
+
+function prevGroup() {
+    showGroup(currentGroup - 1);
+}
+
+/* caroucel certificados */
+let currentCertGroup = 0;
+
+function showCertGroup(index) {
+    const certGroups = document.querySelectorAll('.certificate-group');
+    const totalCertGroups = certGroups.length;
+
+    if (index >= totalCertGroups) {
+        currentCertGroup = 0;
+    } else if (index < 0) {
+        currentCertGroup = totalCertGroups - 1;
+    } else {
+        currentCertGroup = index;
+    }
+
+    const offset = -currentCertGroup * 100;
+    document.querySelector('.certificates-grid').style.transform = `translateX(${offset}%)`;
+}
+
+function nextCertGroup() {
+    showCertGroup(currentCertGroup + 1);
+}
+
+function prevCertGroup() {
+    showCertGroup(currentCertGroup - 1);
+}

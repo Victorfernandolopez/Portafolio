@@ -24,6 +24,19 @@ body {
     line-height: 1.6;
 }
 
+html {
+    overflow:hidden; /* Oculta la barra de desplazamiento */
+}
+
+html {
+    overflow-y: scroll; /* Permite el desplazamiento vertical */
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
 /* centrar el contenido y limitar el ancho maximo */
 .container {
     width: 100%;
