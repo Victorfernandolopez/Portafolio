@@ -16,6 +16,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 50px;
+    white-space: nowrap;
     z-index: 1;
     opacity: 1;
     animation: fadeIn 8s ease-out forwards, slideOut 3s ease 8s forwards;
