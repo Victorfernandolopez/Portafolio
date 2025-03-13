@@ -1,3 +1,18 @@
+function setupRecurrentAnimation(element, inClass, outClass, threshold = 0.5) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                element.classList.remove(outClass);
+                element.classList.add(inClass);
+            } else {
+                element.classList.remove(inClass);
+                element.classList.add(outClass);
+            }
+        });
+    }, { threshold });
+    observer.observe(element);
+}
+
 "use strict";
 
 (function () {
@@ -102,30 +117,34 @@
 
     // Configurar Intersection Observer para la sección "Sobre mí"
     const aboutSection = document.getElementById('sobre-mi');
-    // Nota: No volvemos a declarar aboutText ni aboutImage aquí si ya se han obtenido.
     const aboutText = document.getElementById('slide-about-text');
     const aboutImage = document.getElementById('slide-about-image');
 
-    // Configuramos el observer para que se active cuando el 50% del área esté visible
-    const observerOptions = {
-        threshold: 0.5
-    };
+    // Configuración del observer con umbral del 50%
+    const observerOptions = { threshold: 0.5 };
 
-    const aboutObserver = new IntersectionObserver((entries, observer) => {
+    const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animar el contenedor del texto desde la izquierda
+                // Si la sección está en vista, quitar cualquier clase de salida y activar slide-in
                 if (aboutText) {
-                    aboutText.classList.remove('slide-hidden');
+                    aboutText.classList.remove('slide-out-left');
                     aboutText.classList.add('slide-in-left');
                 }
-                // Animar el contenedor de la imagen desde la derecha
                 if (aboutImage) {
-                    aboutImage.classList.remove('slide-hidden');
+                    aboutImage.classList.remove('slide-out-right');
                     aboutImage.classList.add('slide-in-right');
                 }
-                // Una vez activadas, desuscribirse para no repetir la animación
-                observer.unobserve(entry.target);
+            } else {
+                // Cuando la sección sale del viewport, quitar la clase slide-in y activar slide-out
+                if (aboutText) {
+                    aboutText.classList.remove('slide-in-left');
+                    aboutText.classList.add('slide-out-left');
+                }
+                if (aboutImage) {
+                    aboutImage.classList.remove('slide-in-right');
+                    aboutImage.classList.add('slide-out-right');
+                }
             }
         });
     }, observerOptions);
@@ -133,6 +152,20 @@
     if (aboutSection) {
         aboutObserver.observe(aboutSection);
     }
+
+
+    // Sección Contacto: animación recurrente
+    const contactFormContainer = document.querySelector('.contact-form-container');
+    const contactSocial = document.querySelector('.contact-social');
+
+    if (contactFormContainer) {
+        setupRecurrentAnimation(contactFormContainer, 'animate-zoom-in', 'animate-zoom-out', 0.5);
+    }
+    if (contactSocial) {
+        setupRecurrentAnimation(contactSocial, 'animate-fade-in', 'animate-fade-out', 0.5);
+    }
+
+
 
     // Carrusel de certificados
     let currentCertGroup = 0;

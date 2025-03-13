@@ -73,3 +73,38 @@
 .slide-in-right {
     animation: slideInFromRight 0.8s ease-out forwards;
 }
+
+/* Animación de salida hacia la izquierda (para elementos que entran desde la izquierda) */
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Animación de salida hacia la derecha (para elementos que entran desde la derecha) */
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Clases para la animación de salida */
+.slide-out-left {
+    animation: slideOutToLeft 0.8s ease-out forwards;
+}
+
+.slide-out-right {
+    animation: slideOutToRight 0.8s ease-out forwards;
+}

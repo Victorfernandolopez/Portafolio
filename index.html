@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=optional" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="src/css/main.css" />
     <link rel="stylesheet" href="src/css/header.css">
@@ -57,7 +59,8 @@
         <section class="hero container" id="inicio">
             <div class="hero-content">
                 <h1 class="slide-hidden" id="slide-h1">¡Hola! Soy <span>Lopez Victor</span></h1>
-                <p class="slide-hidden" id="slide-p">Desarrollador Full-Stack apasionado por la tecnología y la innovación.</p>
+                <p class="slide-hidden" id="slide-p">Desarrollador Full-Stack apasionado por la tecnología y la
+                    innovación.</p>
                 <a href="#proyectos" class="btn-primary slide-hidden" id="slide-a">Ver mis proyectos</a>
             </div>
             <div class="tecnologias slide-hidden" id="slide-tecnologias">
@@ -353,27 +356,40 @@
         <section class="contact container" id="contacto">
             <h2>Contacto</h2>
             <p>¿Tienes alguna pregunta o propuesta? ¡Envíame un mensaje!</p>
-            <form class="contact-form" action="https://formspree.io/f/xbldkazg" method="POST">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="Tu nombre" required name="name" />
+            <div class="contact-content">
+                <!-- Columna Izquierda: Formulario -->
+                <div class="contact-form-container">
+                    <form class="contact-form" action="https://formspree.io/f/xbldkazg" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" placeholder="Tu nombre" required name="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo</label>
+                            <input type="email" id="email" placeholder="Tu correo" required name="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" rows="5" placeholder="Tu mensaje..." required
+                                name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">Correo</label>
-                    <input type="email" id="email" placeholder="Tu correo" required name="email" />
+                <!-- Columna Derecha: Redes Sociales -->
+                <div class="contact-social">
+                    <div class="social-links">
+                        <a href="https://github.com/Victorfernandolopez" target="_blank">
+                            <i class="fab fa-github social-icon"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/v%C3%ADctor-l%C3%B3pez-a71584168/" target="_blank">
+                            <i class="fab fa-linkedin social-icon"></i> LinkedIn
+                        </a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" rows="5" placeholder="Tu mensaje..." required name="message"></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Enviar</button>
-            </form>
-            <!-- Redes Sociales -->
-            <div class="social-links">
-                <a href="https://github.com/Victorfernandolopez" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/v%C3%ADctor-l%C3%B3pez-a71584168/" target="_blank">LinkedIn</a>
             </div>
         </section>
+
 
         <!-- Footer -->
         <footer class="footer">

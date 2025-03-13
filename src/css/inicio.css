@@ -171,7 +171,12 @@
 
 /* ================= Animaciones de Slide-In ================= */
 
-/* Keyframes para entrada desde la izquierda */
+/* Para iniciar oculto */
+.slide-hidden {
+    opacity: 0;
+}
+
+/* Entrada desde la izquierda */
 @keyframes slideInFromLeft {
     from {
         transform: translateX(-100%);
@@ -184,7 +189,28 @@
     }
 }
 
-/* Keyframes para entrada desde la derecha */
+.slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Salida hacia la izquierda */
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.slide-out-left {
+    animation: slideOutToLeft 0.8s ease-out forwards;
+}
+
+/* Entrada desde la derecha */
 @keyframes slideInFromRight {
     from {
         transform: translateX(100%);
@@ -197,19 +223,25 @@
     }
 }
 
-/* Clase para mantener oculto el elemento inicialmente */
-.slide-hidden {
-    opacity: 0;
-}
-
-/* Clase para aplicar la animación slide in desde la izquierda */
-.slide-in-left {
-    animation: slideInFromLeft 0.8s ease-out forwards;
-}
-
-/* Clase para aplicar la animación slide in desde la derecha */
 .slide-in-right {
     animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Salida hacia la derecha */
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.slide-out-right {
+    animation: slideOutToRight 0.8s ease-out forwards;
 }
 
 
