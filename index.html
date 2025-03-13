@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lopez Victor - Portafolio</title>
+    <!-- Preconexión a Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=optional" rel="stylesheet">
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="src/css/main.css" />
     <link rel="stylesheet" href="src/css/header.css">
     <link rel="stylesheet" href="src/css/inicio.css">
-    <link rel="stylesheet" href="src/css/Proyectos.css">
-    <link rel="stylesheet" href="src/css/Sobre-mi.css">
+    <link rel="stylesheet" href="src/css/proyectos.css">
+    <link rel="stylesheet" href="src/css/sobre-mi.css">
     <link rel="stylesheet" href="src/css/certificados.css">
     <link rel="stylesheet" href="src/css/contacto.css">
     <link rel="stylesheet" href="src/css/footer.css">
@@ -20,6 +22,7 @@
 </head>
 
 <body>
+    <!-- Animación de bienvenida -->
     <div class="hero-fondo" id="hero">
         <div class="hero-fondo-title">Hello World</div>
         <div class="cube"></div>
@@ -30,14 +33,16 @@
         <div class="cube"></div>
     </div>
 
-    <div id="portafolio" style="display: none;">
-        <!--========== Barra de Navegación ==========-->
+    <!-- Portafolio: Se oculta inicialmente usando la clase "hidden" -->
+    <div id="portafolio" class="hidden">
+        <!-- Barra de Navegación -->
         <header class="header">
             <nav class="nav container">
                 <div class="logo">
                     <div class="planet1">Lv</div>
                 </div>
-                <button class="menu-toggle">☰</button> <!-- Botón hamburguesa -->
+                <!-- Botón hamburguesa con atributo ARIA para accesibilidad -->
+                <button class="menu-toggle" aria-label="Abrir menú de navegación">☰</button>
                 <ul class="nav-menu">
                     <li><a href="#inicio" class="nav-link">Inicio</a></li>
                     <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
@@ -48,7 +53,7 @@
             </nav>
         </header>
 
-        <!--========== Sección de Inicio (Hero) ==========-->
+        <!-- Sección de Inicio (Hero) -->
         <section class="hero container" id="inicio">
             <div class="hero-content">
                 <h1>¡Hola! Soy <span>Lopez Victor</span></h1>
@@ -78,16 +83,16 @@
                         <img src="src/assets/images/css.png" alt="CSS">
                     </div>
                     <div class="logos">
-                        <img src="src/assets/images/sqlserver.png" alt="sqlserver">
+                        <img src="src/assets/images/sqlserver.png" alt="SQL Server">
                     </div>
                     <div class="logos">
-                        <img src="src/assets/images/mysql.png" alt="mysql">
+                        <img src="src/assets/images/mysql.png" alt="MySQL">
                     </div>
                     <div class="logos">
-                        <img src="src/assets/images/sqlite.png" alt="sqlite">
+                        <img src="src/assets/images/sqlite.png" alt="SQLite">
                     </div>
                     <div class="logos">
-                        <img src="src/assets/images/django.png" alt="django">
+                        <img src="src/assets/images/django.png" alt="Django">
                     </div>
                     <div class="logos">
                         <img src="src/assets/images/git.png" alt="Git">
@@ -99,8 +104,7 @@
             </div>
         </section>
 
-
-        <!--========== Sección de Proyectos ==========-->
+        <!-- Sección de Proyectos -->
         <section class="projects container" id="proyectos">
             <h2>Proyectos Destacados</h2>
             <div class="projects-carousel">
@@ -112,38 +116,6 @@
                             <p>Plataforma fintech</p>
                             <a href="src/components/youcreate.html" class="btn-secondary">Ver Detalles</a>
                         </div>
-                        <div class="project-card">
-                            <img src="src/assets/images/youcreate.png" alt="Youcreate" />
-                            <h3>Youcreate</h3>
-                            <p>Plataforma fintech</p>
-                            <a href="src/components/youcreate.html" class="btn-secondary">Ver Detalles</a>
-                        </div>
-                        <div class="project-card">
-                            <img src="" alt="Youcreate" />
-                            <h3>Youcreate</h3>
-                            <p>Plataforma fintech</p>
-                            <a href="src/components/youcreate.html" class="btn-secondary">Ver Detalles</a>
-                        </div>
-                    </div>
-                    <div class="project-group">
-                        <div class="project-card">
-                            <img src="" alt="Youcreate" />
-                            <h3>Youcreate</h3>
-                            <p>Plataforma fintech</p>
-                            <a href="src/components/youcreate.html" class="btn-secondary">Ver Detalles</a>
-                        </div>
-                        <div class="project-card">
-                            <img src="" alt="Youcreate" />
-                            <h3>Youcreate</h3>
-                            <p>Plataforma fintech</p>
-                            <a href="src/components/youcreate.html" class="btn-secondary">Ver Detalles</a>
-                        </div>
-                        <div class="project-card">
-                            <img src="" alt="Youcreate" />
-                            <h3>Youcreate</h3>
-                            <p>Plataforma fintech</p>
-                            <a href="src/components/youcreate.html" class="btn-secondary">Ver Detalles</a>
-                        </div>
                     </div>
                 </div>
                 <button class="prev" onclick="prevGroup()">&#10094;</button>
@@ -151,33 +123,32 @@
             </div>
         </section>
 
-        <!--========== Sección Sobre mí ==========-->
+        <!-- Sección Sobre mí -->
         <section class="about container" id="sobre-mi">
             <h2>Sobre mí</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        ¡Hola! Soy <strong>Lopez Victor</strong>
-                    </p>
+                    <p>¡Hola! Soy <strong>Lopez Victor</strong></p>
                     <p>Un desarrollador de software con una mentalidad enfocada en el crecimiento y la mejora continua.
-                        Me
-                        apasiona construir soluciones tecnológicas que generen impacto, combinando un enfoque analítico
-                        con
+                        Me apasiona construir soluciones tecnológicas que generen impacto, combinando un enfoque
+                        analítico con
                         creatividad y buenas prácticas de desarrollo.</p>
                     <p>Actualmente, estoy finalizando mi tecnicatura en desarrollo de software y la carrera de Python
-                        Developer. Disfruto trabajar en entornos colaborativos donde puedo aportar valor, aprender de
-                        otros
-                        profesionales y seguir perfeccionando mis habilidades.</p>
+                        Developer.
+                        Disfruto trabajar en entornos colaborativos donde puedo aportar valor, aprender de otros
+                        profesionales y
+                        seguir perfeccionando mis habilidades.</p>
                     <p>Mi objetivo es crear experiencias digitales eficientes y escalables, siempre con el compromiso de
-                        mejorar y evolucionar en cada proyecto en el que participo.</p>
+                        mejorar
+                        y evolucionar en cada proyecto en el que participo.</p>
                 </div>
                 <div class="about-image">
-                    <img src="src/assets/images/fotoPerfil-Photoroom.jpg" alt="mi foto" />
+                    <img src="src/assets/images/fotoPerfil-Photoroom.jpg" alt="Foto de Lopez Victor" />
                 </div>
             </div>
         </section>
 
-        <!--========== Sección Certificados ==========-->
+        <!-- Sección Certificados -->
         <section class="certificates container" id="certificados">
             <h2>Certificados</h2>
             <div class="certificates-carousel">
@@ -378,7 +349,7 @@
                 <button class="next-cert" onclick="nextCertGroup()">&#10095;</button>
         </section>
 
-        <!--========== Sección de Contacto ==========-->
+        <!-- Sección de Contacto -->
         <section class="contact container" id="contacto">
             <h2>Contacto</h2>
             <p>¿Tienes alguna pregunta o propuesta? ¡Envíame un mensaje!</p>
@@ -397,7 +368,6 @@
                 </div>
                 <button type="submit" class="btn-primary">Enviar</button>
             </form>
-
             <!-- Redes Sociales -->
             <div class="social-links">
                 <a href="https://github.com/Victorfernandolopez" target="_blank">GitHub</a>
@@ -405,13 +375,13 @@
             </div>
         </section>
 
-        <!--========== Footer ==========-->
+        <!-- Footer -->
         <footer class="footer">
             <p>&copy; 2025 Lopez Victor. Todos los derechos reservados.</p>
         </footer>
 
-        <!--========== Scripts ==========-->
-        <script src="src/js/main.js"></script>
+        <!-- Scripts -->
+        <script src="src/js/main.js" defer></script>
     </div>
 </body>
 

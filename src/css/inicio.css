@@ -1,6 +1,6 @@
-/* Estilos específicos para la sección de inicio */
+/* inicio.css - Estilos para la sección de inicio */
+/* Última actualización: 2025-03-12 */
 
-/* horganiza la seccion en 2 columnas usando flex */
 .hero {
     display: flex;
     align-items: center;
@@ -9,42 +9,26 @@
     min-height: 100vh;
 }
 
-/* texto ocupe la mitad */
 .hero-content {
     flex: 1;
 }
-.tecnologias h1{
-    text-align: center;
-    position: absolute;
-    top: 30%;
-    transform: translateY(-50%);
-    color: var(--color-white);
-    font-size: 3rem;
-    margin-top: 1rem;
-    z-index: 20;
-    width: 100%;
-}
 
-/* titulo */
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: var(--color-white);
 }
 
-/* resaltado de nombre */
 .hero-content h1 span {
     color: var(--color-primary);
 }
 
-/* descripcion */
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
 }
 
-/* boton */
 .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -61,16 +45,29 @@
     background-color: var(--color-secondary-light);
 }
 
-.tecnologias{
+/* Sección de tecnologías y órbita 3D */
+.tecnologias {
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1000px;
-    padding: 2rem 2rem;
+    padding: 2rem;
 }
-/* Contenedor 3D de la órbita */
+
+.tecnologias h1{
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    color: var(--color-white);
+    font-size: 3rem;
+    margin-top: 1rem;
+    z-index: 20;
+    width: 100%;
+}
+
 .orbit-container {
     position: relative;
     width: 400px;
@@ -79,7 +76,6 @@
     animation: orbit3d 20s linear infinite;
 }
 
-/* Planeta central con efecto volumétrico */
 .planet {
     position: absolute;
     top: 50%;
@@ -100,78 +96,96 @@
     z-index: 10;
 }
 
-/* Cada logo se posiciona en la órbita */
+/* Posicionamiento de logos en la órbita */
 .logos {
     position: absolute;
     top: 50%;
     left: 50%;
     transform-origin: center;
 }
+
 .logos img {
     width: 50px;
     height: 50px;
 }
 
-/* Distribución de logos en la órbita */
+/* Distribución de logos (puedes ajustar los ángulos si es necesario) */
 .logos:nth-child(2) {
     transform: rotateY(0deg) translateZ(200px);
 }
+
 .logos:nth-child(3) {
     transform: rotateY(30deg) translateZ(200px);
 }
+
 .logos:nth-child(4) {
     transform: rotateY(60deg) translateZ(200px);
 }
+
 .logos:nth-child(5) {
     transform: rotateY(90deg) translateZ(200px);
 }
+
 .logos:nth-child(6) {
     transform: rotateY(120deg) translateZ(200px);
 }
+
 .logos:nth-child(7) {
     transform: rotateY(150deg) translateZ(200px);
 }
+
 .logos:nth-child(8) {
     transform: rotateY(180deg) translateZ(200px);
 }
+
 .logos:nth-child(9) {
     transform: rotateY(210deg) translateZ(200px);
 }
+
 .logos:nth-child(10) {
     transform: rotateY(240deg) translateZ(200px);
 }
+
 .logos:nth-child(11) {
     transform: rotateY(270deg) translateZ(200px);
 }
+
 .logos:nth-child(12) {
     transform: rotateY(300deg) translateZ(200px);
 }
+
 .logos:nth-child(13) {
     transform: rotateY(330deg) translateZ(200px);
 }
 
-/* Animación de la órbita completa (3D) con menor inclinación en X */
+/* Animación de órbita 3D */
 @keyframes orbit3d {
-    from { transform: rotateY(0deg) rotateX(10deg); }
-    to   { transform: rotateY(360deg) rotateX(10deg); }
+    from {
+        transform: rotateY(0deg) rotateX(10deg);
+    }
+
+    to {
+        transform: rotateY(360deg) rotateX(10deg);
+    }
 }
 
+/* Responsividad para móviles */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
         padding-top: 4rem;
     }
-    
+
     .hero-content {
         text-align: center;
         margin-bottom: 2rem;
     }
-    
+
     .tecnologias {
-        width: 100%;
         max-width: 300px;
+        width: 100%;
     }
-    
+
     .logos img {
         width: 30px;
         height: 30px;

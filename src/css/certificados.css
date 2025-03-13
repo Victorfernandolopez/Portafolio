@@ -1,4 +1,6 @@
-/* Título */
+/* certificados.css - Estilos para la sección de certificados y carrusel */
+/* Última actualización: 2025-03-12 */
+
 .certificates h2 {
     text-align: center;
     margin-bottom: 2rem;
@@ -6,32 +8,29 @@
 }
 
 .certificates p {
-    text-justify: justify;
+    text-align: justify;
     line-height: 1;
 }
 
 .certificates-container {
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    margin: 0 auto; 
-    padding: 20px;  
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .card {
     width: 100%;
     max-width: 400px;
-    min-height: 350px; 
-    height: auto;
+    min-height: 350px;
     position: relative;
     margin: 10px;
 }
 
-
-/* Estilos para la cara trasera (única) */
 .card .back {
     position: absolute;
     width: 100%;
@@ -55,9 +54,8 @@
 .card .back p {
     font-size: 0.7rem;
     text-align: left;
-    text-size-adjust: auto;
     letter-spacing: 1px;
-    margin: 0 0;
+    margin: 0;
 }
 
 .card .back .link {
@@ -68,7 +66,6 @@
     margin-top: 1rem;
 }
 
-/* Carrusel de Certificados */
 .certificates-carousel {
     position: relative;
     overflow: hidden;
@@ -86,8 +83,9 @@
     flex: 0 0 100%;
 }
 
-/* Navegación */
-.prev-cert, .next-cert {
+/* Navegación para certificados */
+.prev-cert,
+.next-cert {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -108,35 +106,28 @@
     right: 10px;
 }
 
-/* Media Queries para diseño responsivo */
-@media (max-width: 1024px) {
+/* Consolidación de media queries para dispositivos menores a 768px */
+@media (max-width: 768px) {
     .certificates-container {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 768px) {
-    .certificates-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
     .certificate-group {
         flex-direction: column;
     }
 }
 
+/* Ajustes para dispositivos muy pequeños */
 @media (max-width: 480px) {
     .card .back {
         padding: 10px;
     }
-    
+
     .card .back p {
         font-size: 0.65rem;
         line-height: 1.2;
     }
-    
+
     .card .back h3 {
         font-size: 1rem;
     }

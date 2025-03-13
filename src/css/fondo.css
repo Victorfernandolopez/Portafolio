@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+/* fondo.css - Estilos para la animación y fondo del hero */
+/* Última actualización: 2025-03-12 */
 
 .hero-fondo {
     background-color: var(--color-bg-dark);
@@ -8,7 +9,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Título de "Hello World" */
 .hero-fondo-title {
     color: #fff;
     position: absolute;
@@ -20,10 +20,8 @@
     z-index: 1;
     opacity: 1;
     animation: fadeIn 8s ease-out forwards, slideOut 3s ease 8s forwards;
-    /* Mantén el "Hello World" durante 10 segundos y luego deslízalo hacia arriba */
 }
 
-/* Animación de los cuadrados */
 .cube {
     position: absolute;
     top: 80vh;
@@ -70,7 +68,6 @@
     top: 10vh;
 }
 
-/* Animación para los cubos */
 @keyframes cube {
     from {
         transform: scale(0) rotate(0deg) translate(-50%, -50%);
@@ -83,7 +80,6 @@
     }
 }
 
-/* Animación de desvanecimiento para "Hello World" */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -94,7 +90,6 @@
     }
 }
 
-/* Animación de deslizamiento para que "Hello World" se deslice hacia arriba */
 @keyframes slideOut {
     0% {
         opacity: 1;
@@ -107,7 +102,6 @@
     }
 }
 
-/* La página de inicio entra desde abajo */
 #portafolio {
     display: none;
     animation: slideIn 1.5s ease forwards;
@@ -125,7 +119,6 @@
     }
 }
 
-/* Nueva clase para deslizamiento hacia arriba */
 .slide-up {
     animation: slideUp 3s ease forwards;
 }
@@ -137,7 +130,7 @@
     }
 
     100% {
-        margin-top: -100px; /* Ajusta este valor según sea necesario */
+        margin-top: -100px;
         opacity: 0;
     }
 }

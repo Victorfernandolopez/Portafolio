@@ -1,11 +1,14 @@
-/* reset basico */
+/* main.css - Archivo principal de estilos */
+/* Última actualización: 2025-03-12 */
+
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* variables globales */
+/* Variables globales */
 :root {
     --color-primary: #6D4ECF;
     --color-primary-light: #9E8FD4;
@@ -13,8 +16,13 @@
     --color-secondary-light: #5240D0;
     --color-bg-dark: #070220;
     --color-white: #ffffff;
-    --color-text: #cccccc; /* Ajusta según prefieras */
-    --font-family: 'Montserrat', sans-serif; /* Ejemplo */
+    --color-text: #cccccc;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
 }
 
 body {
@@ -24,49 +32,30 @@ body {
     line-height: 1.6;
 }
 
+/* Asegurar scroll vertical sin mostrar la barra de desplazamiento */
 html {
-    overflow:hidden; /* Oculta la barra de desplazamiento */
-}
-
-html {
-    overflow-y: scroll; /* Permite el desplazamiento vertical */
-    scrollbar-width: none; /* Firefox */
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    display: none;
+    /* Chrome, Safari y Opera */
 }
 
-/* centrar el contenido y limitar el ancho maximo */
+/* Contenedor general */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem;
+    padding: 2rem;
 }
 
-/* responsividad */
+/* Media query para móviles */
 @media (max-width: 500px) {
     .hero {
         flex-direction: column;
         text-align: center;
     }
-
-    .hero-3d {
-        margin-top: 2rem;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .about-image img {
-        margin-bottom: 1rem;
-    }
-
-    .nav-menu {
-        gap: 1rem;
-    }
 }
-
-
