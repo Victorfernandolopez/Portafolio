@@ -33,3 +33,43 @@
     object-fit: cover;
 }
 
+/* Keyframes para entrada desde la izquierda */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes para entrada desde la derecha */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Clase para mantener oculto el elemento inicialmente */
+.slide-hidden {
+    opacity: 0;
+}
+
+/* Clase para animación slide-in desde la izquierda */
+.slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Clase para animación slide-in desde la derecha */
+.slide-in-right {
+    animation: slideInFromRight 0.8s ease-out forwards;
+}

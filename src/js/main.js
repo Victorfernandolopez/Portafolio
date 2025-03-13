@@ -47,20 +47,92 @@
 
     // Transición del hero a la sección del portafolio
     setTimeout(() => {
-        const heroFondo = document.getElementById("hero");
-        const heroTitle = document.querySelector(".hero-fondo-title");
+        const heroFondo = document.getElementById('hero');
+        const heroTitle = document.querySelector('.hero-fondo-title');
         if (heroFondo && heroTitle) {
-            // Aplica las animaciones de deslizamiento
-            heroFondo.classList.add("slide-out");
-            heroTitle.classList.add("slide-up");
+            // Aplica las animaciones de deslizamiento al hero
+            heroFondo.classList.add('slide-out');
+            heroTitle.classList.add('slide-up');
 
             // Después de la animación, oculta el hero y muestra el portafolio
             setTimeout(() => {
-                heroFondo.style.display = "none";
-                document.getElementById("portafolio").style.display = "block";
-            }, 3000);
+                heroFondo.style.display = 'none';
+                document.getElementById('portafolio').style.display = 'block';
+
+                // Animaciones de la sección Inicio
+                // Animación para el h1 desde la izquierda (sin retraso)
+                const h1 = document.getElementById('slide-h1');
+                if (h1) {
+                    setTimeout(() => {
+                        h1.classList.remove('slide-hidden');
+                        h1.classList.add('slide-in-left');
+                    }, 1000);
+                }
+
+                // Animación para el párrafo con un retraso (200ms)
+                const p = document.getElementById('slide-p');
+                if (p) {
+                    setTimeout(() => {
+                        p.classList.remove('slide-hidden');
+                        p.classList.add('slide-in-left');
+                    }, 1300);
+                }
+
+                // Animación para el enlace con otro retraso (400ms)
+                const a = document.getElementById('slide-a');
+                if (a) {
+                    setTimeout(() => {
+                        a.classList.remove('slide-hidden');
+                        a.classList.add('slide-in-left');
+                    }, 1600);
+                }
+
+                // Animación para el div de tecnologías desde la derecha (600ms de retraso)
+                const tecnologias = document.getElementById('slide-tecnologias');
+                if (tecnologias) {
+                    setTimeout(() => {
+                        tecnologias.classList.remove('slide-hidden');
+                        tecnologias.classList.add('slide-in-right');
+                    }, 1000);
+                }
+
+            }, 3000); // 3000ms es el tiempo de la animación de slide-out del hero
         }
-    }, 7000);
+    }, 7000); // 7000ms es el tiempo total que "Hello World" se muestra
+
+    // Configurar Intersection Observer para la sección "Sobre mí"
+    const aboutSection = document.getElementById('sobre-mi');
+    // Nota: No volvemos a declarar aboutText ni aboutImage aquí si ya se han obtenido.
+    const aboutText = document.getElementById('slide-about-text');
+    const aboutImage = document.getElementById('slide-about-image');
+
+    // Configuramos el observer para que se active cuando el 50% del área esté visible
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const aboutObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animar el contenedor del texto desde la izquierda
+                if (aboutText) {
+                    aboutText.classList.remove('slide-hidden');
+                    aboutText.classList.add('slide-in-left');
+                }
+                // Animar el contenedor de la imagen desde la derecha
+                if (aboutImage) {
+                    aboutImage.classList.remove('slide-hidden');
+                    aboutImage.classList.add('slide-in-right');
+                }
+                // Una vez activadas, desuscribirse para no repetir la animación
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    if (aboutSection) {
+        aboutObserver.observe(aboutSection);
+    }
 
     // Carrusel de certificados
     let currentCertGroup = 0;
