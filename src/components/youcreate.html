@@ -3,9 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youcreate</title>
+    <title>Detalles del Proyecto - YouCreate</title>
+    <link rel="stylesheet" href="../css/youcreate.css">
 </head>
 <body>
-    <h1>Youcreate</h1>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>YouCreate - Gestión financiera para creadores de contenido</h1>
+            <p>Una plataforma fintech para administrar ingresos, gastos e impuestos de creadores de contenido.</p>
+            <div class="buttons">
+                <a href="https://github.com/IgrowkerTraining/i003-youcreate-back" class="btn" target="_blank">Ver Repositorio</a>
+                <a href="https://igrowker-youcreate.web.app/" class="btn" target="_blank">Ver Proyecto en Vivo</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../assets/images/youcreate/portada.png" alt="Portada de YouCreate">
+        </div>
+    </header>
+    
+    <section class="descripcion">
+        <h2>Descripción General</h2>
+        <img src="" alt="Logo de YouCreate" class="logo">
+        <p>YouCreate es una plataforma fintech diseñada para ayudar a creadores de contenido a gestionar sus ingresos, gastos y obligaciones fiscales.</p>
+        <ul>
+            <li>📊 Panel de control financiero</li>
+            <li>🛡 Seguridad avanzada con 2FA</li>
+            <li>📑 Registro y autenticación segura</li>
+            <li>📬 Notificaciones automáticas de vencimientos fiscales</li>
+        </ul>
+    </section>
+    
+    <section class="galeria">
+        <h2>Galería Multimedia</h2>
+        <div class="imagenes">
+            <img src="../assets/images/youcreate/landing page.png" alt="Landing Page">
+            <img src="../assets/images/youcreate/deshboard.png" alt="Dashboard Principal">
+            <img src="../assets/images/youcreate/otp aceptado.png" alt="OTP Aceptado">
+            <img src="../assets/images/youcreate/verificacion por codigo otp.png" alt="Verificación por Código OTP">
+        </div>
+        <div class="videos">
+            <h3>Presentación del Proyecto</h3>
+            <video controls>
+                <source src="../assets/videos/youcreate/youcreate.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <h3>Demostración en Vivo</h3>
+            <video controls>
+                <source src="../assets/videos/youcreate/presentacion del proyecto.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
+    </section>
+    
+    <section class="codigo">
+        <h2>Explicación Técnica</h2>
+        <p>El backend de YouCreate está desarrollado en Django con API RESTful, utilizando SQLite en desarrollo y PostgreSQL en producción.</p>
+        <pre><code>
+        // Backend API principal
+        GET /api/ingresos - Devuelve ingresos categorizados
+        POST /api/pagos-colaboradores - Registra pagos a colaboradores
+        GET /api/obligaciones-fiscales - Resumen de impuestos a pagar
+        </code></pre>
+        <p>Se ha implementado seguridad con autenticación JWT, cifrado de datos sensibles y validación por OTP.</p>
+    </section>
+    
+    <section class="mi-contribucion">
+        <h2>Mi Contribución al Proyecto</h2>
+        <p>En este proyecto, desarrollé la lógica para el cálculo de impuestos según el país y los ingresos del usuario.</p>
+        <p>Además, implementé el sistema de notificaciones automáticas que envía emails sobre vencimientos fiscales y cambios críticos en la cuenta.</p>
+        <p>También colaboré en la seguridad de autenticación con confirmación de correo y códigos OTP.</p>
+    </section>
+    
+    <section class="roadmap">
+        <h2>Roadmap del Uso de la Aplicación</h2>
+        <ol>
+            <li>🚀 Inicio en la Landing Page.</li>
+            <li>📝 Registro de usuario.</li>
+            <li>📩 Email de confirmación para activar la cuenta.</li>
+            <li>🔑 Login con credenciales.</li>
+            <li>📬 Envío de código OTP al email.</li>
+            <li>✅ Verificación de OTP.</li>
+            <li>📊 Acceso al Dashboard y funcionalidades.</li>
+        </ol>
+    </section>
+    
+    <section class="desafios">
+        <h2>Retos y Soluciones</h2>
+        <p>Durante el desarrollo enfrentamos desafíos en la optimización del UX/UI y la integración de pagos seguros.</p>
+    </section>
+    
+    <section class="aprendizaje">
+        <h2>Aprendizajes y Mejoras Futuras</h2>
+        <p>Aprendimos sobre seguridad en fintech y la importancia de una interfaz intuitiva. Planeamos mejorar la integración de pagos internacionales.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 - Lopez Victor | <a href="#">Más Proyectos</a></p>
+    </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>
