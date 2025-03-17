@@ -1,0 +1,121 @@
+/* certificados.css - Estilos para la sección de certificados y carrusel */
+/* Última actualización: 2025-03-12 */
+
+/* TITULO */
+.certificates h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+/* CARROUCEL */
+.certificates-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.certificates-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Navegación para certificados */
+.prev-cert,
+.next-cert {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.prev-cert {
+    left: 10px;
+}
+
+.next-cert {
+    right: 10px;
+}
+
+
+.certificates p {
+    text-align: justify;
+    line-height: 1;
+}
+
+/* SLIDE */
+.slide-cert {
+    flex: 0 0 33.33%;
+    padding: 10px;
+}
+
+
+.card-cert {
+    width: 100%;
+    max-width: 400px;
+    min-height: 350px;
+    position: relative;
+    margin: 10px;
+}
+
+/* contenido de la tarjeta */
+.front-cert{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1e1e2e;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    overflow: auto;
+}
+
+.front-cert h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-light);
+}
+
+.front-cert p {
+    font-size: 0.7rem;
+    text-align: left;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.front-cert .link {
+    margin-top: 1rem;
+}
+
+.front-cert .btn-secondary {
+    margin-top: 1rem;
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.front-cert .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* resposivo */
+/* En dispositivos móviles y tablets, que el slide ocupe el 100% */
+@media (max-width: 768px) {
+    .slide-cert {
+        flex: 0 0 100%;
+    }
+}

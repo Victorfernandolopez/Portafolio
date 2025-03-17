@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Proyecto - YouCreate</title>
+    <link rel="stylesheet" href="../css/youcreate.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>YouCreate - Gestión financiera para creadores de contenido</h1>
+            <p>Una plataforma fintech para administrar ingresos, gastos e impuestos de creadores de contenido.</p>
+            <div class="buttons">
+                <a href="https://github.com/IgrowkerTraining/i003-youcreate-back" class="btn" target="_blank">Ver Repositorio</a>
+                <a href="https://igrowker-youcreate.web.app/" class="btn" target="_blank">Ver Proyecto en Vivo</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../assets/images/youcreate/portada.png" alt="Portada de YouCreate">
+        </div>
+    </header>
+    
+    <section class="descripcion">
+        <h2>Descripción General</h2>
+        <img src="../assets/images/youcreate/logo youcreate.png" alt="Logo de YouCreate" class="logo">
+        <p>YouCreate es una plataforma fintech diseñada para ayudar a creadores de contenido a gestionar sus ingresos, gastos y obligaciones fiscales.</p>
+        <ul>
+            <li>📊 Panel de control financiero</li>
+            <li>🛡 Seguridad avanzada con 2FA</li>
+            <li>📑 Registro y autenticación segura</li>
+            <li>📬 Notificaciones automáticas de vencimientos fiscales</li>
+        </ul>
+    </section>
+    
+    <section class="galeria">
+        <h2>Galería Multimedia</h2>
+        <div class="imagenes">
+            <img src="../assets/images/youcreate/landing page.png" alt="Landing Page">
+            <img src="../assets/images/youcreate/deshboard.png" alt="Dashboard Principal">
+            <img src="../assets/images/youcreate/otp aceptado.png" alt="OTP Aceptado">
+            <img src="../assets/images/youcreate/verificacion por codigo otp.png" alt="Verificación por Código OTP">
+        </div>
+        <div class="videos-container">
+            <div class="videos-container">
+                <div class="video-column">
+                    <h3>Presentación del Proyecto</h3>
+                    <video controls>
+                        <source src="../assets/videos/youcreate/youcreate.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="video-column">
+                    <h3>Demostración en Vivo</h3>
+                    <video controls>
+                        <source src="../assets/videos/youcreate/presentacion del proyecto.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mi-contribucion">
+        <h2>Mi Contribución al Proyecto</h2>
+        <p>En este proyecto, desarrollé la lógica para el cálculo de impuestos según el país y los ingresos del usuario.</p>
+        <p>Además, implementé el sistema de notificaciones automáticas que envía emails sobre vencimientos fiscales y cambios críticos en la cuenta.</p>
+        <p>También colaboré en la seguridad de autenticación con confirmación de correo y códigos OTP.</p>
+    </section>
+    
+    <section class="codigo">
+        <h2>Explicación Técnica de la Lógica Fiscal</h2>
+        
+        <h3>1. strategy.py</h3>
+        <p>
+            Este archivo define la interfaz base para todas las estrategias fiscales utilizando el patrón <em>Strategy</em>.
+            Se declara una clase abstracta <code>ObligacionesFiscalesStrategy</code> que obliga a implementar el método
+            <code>calcular_obligaciones</code> en cada estrategia concreta. Esto garantiza que cada país implemente
+            su propia lógica para calcular impuestos, permitiendo ampliar fácilmente el sistema a otros países.
+        </p>
+        
+        <h3>2. fiscal_strategy_factory.py</h3>
+        <p>
+            En este módulo se implementa una fábrica que selecciona la estrategia fiscal correcta según el país de residencia
+            del usuario. El método estático <code>get_strategy</code> evalúa el país (normalizado a minúsculas) y retorna
+            la instancia correspondiente (por ejemplo, <code>ArgentinaFiscalStrategy</code> para "argentina"). Si no se
+            encuentra una estrategia para el país indicado, se lanza una excepción. Esto centraliza la lógica de selección y
+            facilita la incorporación de nuevos países.
+        </p>
+        
+        <h3>3. argentina_strategy.py</h3>
+        <p>
+            Este archivo implementa la lógica fiscal específica para Argentina, extendiendo la interfaz definida en
+            <code>ObligacionesFiscalesStrategy</code>. Entre sus funcionalidades se encuentran:
+        </p>
+        <ul>
+            <li>
+                <strong>Cálculo de Ingresos:</strong> Se promedian los ingresos mensuales del usuario basándose en los registros
+                del año en curso.
+            </li>
+            <li>
+                <strong>Cálculo de Obligaciones:</strong> Dependiendo de si el usuario es monotributista o no, se calculan
+                distintos impuestos (Monotributo, IVA, Impuesto a las Ganancias) usando escalas y porcentajes específicos.
+            </li>
+            <li>
+                <strong>Gestión de Fechas:</strong> Se definen vencimientos (usualmente el día 20) y se ajustan si caen en fin
+                de semana, garantizando el cumplimiento de los plazos.
+            </li>
+            <li>
+                <strong>Persistencia:</strong> Las obligaciones se registran a través de un repositorio, evitando duplicados en
+                la base de datos.
+            </li>
+        </ul>
+        <p>
+            Esta implementación resuelve la problemática de gestionar y automatizar el cálculo y registro de obligaciones
+            fiscales, adaptándose a las necesidades específicas de cada régimen impositivo en Argentina.
+        </p>
+        
+        <p>
+            En resumen, esta arquitectura modular basada en el patrón <em>Strategy</em> y el uso de una <em>Factory</em> para
+            la selección dinámica de estrategias, permitió una solución escalable y mantenible para el cálculo fiscal en el
+            backend de YouCreate.
+        </p>
+    </section>
+    
+    <section class="roadmap">
+        <h2>Roadmap del Uso de la Aplicación</h2>
+        <ol>
+            <li>🚀 Inicio en la Landing Page.</li>
+            <li>📝 Registro de usuario.</li>
+            <li>📩 Email de confirmación para activar la cuenta.</li>
+            <li>🔑 Login con credenciales.</li>
+            <li>📬 Envío de código OTP al email.</li>
+            <li>✅ Verificación de OTP.</li>
+            <li>📊 Acceso al Dashboard y funcionalidades.</li>
+        </ol>
+    </section>
+    
+    <section class="desafios">
+        <h2>Retos y Soluciones</h2>
+        <p>Durante el desarrollo enfrentamos desafíos en la optimización del UX/UI y la integración de pagos seguros.</p>
+    </section>
+    
+    <section class="aprendizaje">
+        <h2>Aprendizajes y Mejoras Futuras</h2>
+        <p>Aprendimos sobre seguridad en fintech y la importancia de una interfaz intuitiva. Planeamos mejorar la integración de pagos internacionales.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 - Lopez Victor | <a href="#">Más Proyectos</a></p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

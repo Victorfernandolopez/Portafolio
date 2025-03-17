@@ -1,0 +1,110 @@
+/* titulo */
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Keyframes para entrada desde la izquierda */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes para entrada desde la derecha */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Clase para mantener oculto el elemento inicialmente */
+.slide-hidden {
+    opacity: 0;
+}
+
+/* Clase para animación slide-in desde la izquierda */
+.slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Clase para animación slide-in desde la derecha */
+.slide-in-right {
+    animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Animación de salida hacia la izquierda (para elementos que entran desde la izquierda) */
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Animación de salida hacia la derecha (para elementos que entran desde la derecha) */
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Clases para la animación de salida */
+.slide-out-left {
+    animation: slideOutToLeft 0.8s ease-out forwards;
+}
+
+.slide-out-right {
+    animation: slideOutToRight 0.8s ease-out forwards;
+}

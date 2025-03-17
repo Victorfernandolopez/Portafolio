@@ -1,0 +1,61 @@
+/* main.css - Archivo principal de estilos */
+/* Última actualización: 2025-03-12 */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables globales */
+:root {
+    --color-primary: #6D4ECF;
+    --color-primary-light: #9E8FD4;
+    --color-secondary: #2C09EB;
+    --color-secondary-light: #5240D0;
+    --color-bg-dark: #070220;
+    --color-white: #ffffff;
+    --color-text: #cccccc;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Asegurar scroll vertical sin mostrar la barra de desplazamiento */
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari y Opera */
+}
+
+/* Contenedor general */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Media query para móviles */
+@media (max-width: 500px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}

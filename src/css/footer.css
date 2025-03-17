@@ -1,0 +1,14 @@
+/* footer.css - Estilos para el pie de página */
+/* Última actualización: 2025-03-12 */
+
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #1e1e2e;
+    margin-top: 2rem;
+}
+
+.footer p {
+    color: var(--color-white);
+    font-size: 0.9rem;
+}
