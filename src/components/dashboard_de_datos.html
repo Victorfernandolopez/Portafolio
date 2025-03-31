@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Técnica - Visualización de Datos</title>
+    <link rel="stylesheet" href="../components/component-css/dashboard_de_datos.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Prueba Técnica – Visualización de Datos</h1>
+            <p>Aplicación fullstack para visualizar datos de un archivo JSON usando FastAPI, Svelte y Docker.</p>
+            <div class="buttons">
+                <a href="https://github.com/Victorfernandolopez/prueba_tecnica-reputacion_digital-.git" class="btn" target="_blank">Ver Repositorio</a>
+                <a href="../assets/descargas/prueva-tecnica-fullstack-lopezVictor.zip" class="btn" target="_blank">Descargar ZIP</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../assets/images/Dashboard_de_datos/prueba_tecnica-reputacion_digital.png" alt="Portada de la Prueba Técnica">
+        </div>
+    </header>
+
+    <section class="descripcion">
+        <h2>Descripción General</h2>
+        <p>Este proyecto fue desarrollado como parte de una prueba técnica para una posición de Desarrollador Fullstack.</p>
+        <ul>
+            <li>📁 Backend con FastAPI</li>
+            <li>📊 Frontend con Svelte y eCharts</li>
+            <li>🐳 Docker y Docker Compose para ejecución unificada</li>
+        </ul>
+    </section>
+
+    <section class="galeria">
+        <h2>Galería Multimedia</h2>
+        <div class="imagenes">
+            <img src="../assets/images/Dashboard_de_datos/prueba tecnica.png" alt="Dashboard 1">
+        </div>
+        <div class="videos-container">
+            <div class="video-column">
+            </div>
+        </div>
+    </section>
+
+    <section class="mi-contribucion">
+        <h2>Mi Contribución al proyecto</h2>
+        <p>Desarrollé e integré el backend con FastAPI, expuse el endpoint `/data` y compilé el frontend con Svelte.</p>
+        <p>Aprendí y utilicé por primera vez Docker para empaquetar y ejecutar la app de manera unificada.</p>
+    </section>
+
+    <section class="codigo">
+        <h2>Explicación Técnica</h2>
+        
+        <h3>Backend (main.py)</h3>
+        <p>Exposición del endpoint REST `/data` leyendo `data.json` y sirviendo archivos estáticos del frontend.</p>
+
+        <h3>Frontend (Svelte + eCharts)</h3>
+        <p>
+            El frontend fue desarrollado usando Svelte, un framework moderno y reactivo. La aplicación realiza una petición 
+            <code>fetch('/data')</code> al cargar, obteniendo los datos del backend y procesándolos dinámicamente.
+        </p>
+        <p>
+            Se utilizaron dos gráficos de la librería eCharts:
+        </p>
+        <ul>
+            <li>📊 Un gráfico circular para mostrar la distribución de productos</li>
+            <li>📈 Un gráfico de barras que representa valores agrupados por mes</li>
+        </ul>
+        <p>
+            El resultado final es una interfaz sencilla pero efectiva, totalmente desacoplada del backend, que se integra 
+            gracias al endpoint `/data`. La compilación se realiza con <code>npm run build</code> y los archivos estáticos se 
+            sirven desde FastAPI.
+        </p>
+
+        <h3>Dockerfile</h3>
+        <p>Imagen multi-stage para compilar el frontend y ejecutar FastAPI con Uvicorn desde el mismo contenedor.</p>
+
+        <h3>docker-compose.yml</h3>
+        <p>Orquestador que monta `data.json` como volumen y expone el puerto 8000.</p>
+    </section>
+
+    <section class="roadmap">
+        <h2>Roadmap de Uso</h2>
+        <ol>
+            <li>📦 Descargar y descomprimir el archivo ZIP</li>
+            <li>🐳 Ejecutar `docker-compose up --build`</li>
+            <li>🌐 Acceder a [http://localhost:8000](http://localhost:8000)</li>
+        </ol>
+    </section>
+
+    <section class="desafios">
+        <h2>Retos</h2>
+        <p>El principal reto fue abordar tecnologías nuevas (FastAPI, Svelte, Docker) y lograr integrarlas correctamente.</p>
+    </section>
+
+    <section class="aprendizaje">
+        <h2>Aprendizajes</h2>
+        <p>Consolidé mi conocimiento sobre arquitectura fullstack moderna, contenedores y separación de responsabilidades en un proyecto real.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Victor Lopez | <a href="/index.html">Volver al Portafolio</a></p>
+    </footer>
+    <script src="../js/desboard_de_datos.js"></script>
+</body>
+</html>
